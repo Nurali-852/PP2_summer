@@ -132,6 +132,35 @@ def show_all():
     cur.close()
     conn.close()
 
-show_all()
-add_many_contacts()
-show_all()
+def menu():
+        while True:
+            print("\nPhoneBook")
+            print("1 - Add or update contact")
+            print("2 - Add many contacts")
+            print("3 - Show all contacts")
+            print("4 - Search by pattern")
+            print("5 - Show paginated contacts")
+            print("6 - Delete by name or phone")
+            print("0 - Exit")
+
+            choice = input("Choose: ")
+
+            if choice == "1":
+                add_contact()
+            elif choice == "2":
+                add_many_contacts()
+            elif choice == "3":
+                show_all()
+            elif choice == "4":
+                find_by_pattern()
+            elif choice == "5":
+                show_paginated()
+            elif choice == "6":
+                remove_contact()
+            elif choice == "0":
+                print("Bye, bye!")
+                break
+            else:
+                print("Wrong choice")
+                
+menu()

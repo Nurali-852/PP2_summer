@@ -167,6 +167,42 @@ def remove_by_phone():
     cur.close()
     conn.close()
 
-create_table()
-from_csv()
-show_all()
+def menu():
+    while True:
+        print("\nPhoneBook")
+        print("1 - Add contact")
+        print("2 - Import from csv")
+        print("3 - Show all contacts")
+        print("4 - Search by name")
+        print("5 - Search by phone prefix")
+        print("6 - Update name")
+        print("7 - Update phone")
+        print("8 - Delete by name")
+        print("9 - Delete by phone")
+        print("0 - Exit")
+        choice = input("Choose: ").strip()
+        if choice == "1":
+            add_number()
+        elif choice == "2":
+            from_csv()
+        elif choice == "3":
+            show_all()
+        elif choice == "4":
+            find_by_name()
+        elif choice == "5":
+            find_by_prefix()
+        elif choice == "6":
+            change_name()
+        elif choice == "7":
+            change_phone()
+        elif choice == "8":
+            remove_by_name()
+        elif choice == "9":
+            remove_by_phone()
+        elif choice == "0":
+            print("Bye, bye!")
+            break
+        else:
+            print("Wrong choice")
+
+menu()
